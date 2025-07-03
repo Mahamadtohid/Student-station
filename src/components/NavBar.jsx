@@ -9,7 +9,7 @@ function NavBar(props){
     let setIsLoggenIn = props.setIsLoggenIn;
 
     return (
-        <div className="flex justify-evenly">
+        <div className="flex justify-between mx-auto items-content w-11/12 max-w-[1160] py-4 ">
 
             <div>
                 <Link to="/">
@@ -18,7 +18,7 @@ function NavBar(props){
             </div>
 
             <nav>
-                <ul className="flex gap-3 text-white ">
+                <ul className="flex gap-x-6 text-white ">
                     <li>
                         <Link to="/">Home</Link>
                     </li>
@@ -34,13 +34,11 @@ function NavBar(props){
                 </ul>
             </nav>
 
-            <div className="flex ml-5 gap-3">
+            <div className="flex items-center gap-x-4">
                 {
                     !isLoggedIn &&
-                    <Link to="/login" onClick={() => {setIsLoggenIn(true);
-                        toast.success('Logged out successfully!');
-                        }}>
-                        <button>Login</button>
+                    <Link to="/login">
+                        <button className="bg-richblack-800 text-richblack-100 py-[8px] px-[12px] border-richblack-700 rounded-[8px]">Login</button>
                     
                     </Link>
                     }
@@ -48,7 +46,7 @@ function NavBar(props){
                 {
                     !isLoggedIn &&
                     <Link to="/signup">
-                        <button>SignUp</button>
+                        <button className="bg-richblack-800 text-richblack-100 py-[8px] px-[12px] border-richblack-700 rounded-[8px]">SignUp</button>
                     
                     </Link>
                 }
@@ -60,7 +58,7 @@ function NavBar(props){
                         toast.success('Logged out successfully!')
                         
                     }}>
-                        <button>Log Out</button>
+                        <button className="bg-richblack-800 text-richblack-100 py-[8px] px-[12px] border-richblack-700 rounded-[8px]">Log Out</button>
                     
                     </Link>
                 }
@@ -68,7 +66,7 @@ function NavBar(props){
                 {   
                     isLoggedIn &&
                     <Link to="/dashboard">
-                        <button>Dashboard</button>
+                        <button className="bg-richblack-800 text-richblack-100 py-[8px] px-[12px] border-richblack-700 rounded-[8px]">Dashboard</button>
                     
                     </Link>
                 }

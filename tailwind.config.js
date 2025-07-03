@@ -5,7 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+
+      colors: {
+        richblack: {
+          800: '#0A0F21',  // ← You can change this HEX to your desired shade
+        },
+      },
+    },
   },
   plugins: [],
 }

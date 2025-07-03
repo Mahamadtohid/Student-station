@@ -2,7 +2,7 @@ import Template from '../components/Template.jsx';
 import LoginImg from '../assets/login.png'
 
 
-function Login(setIsLoggedIn){
+function Login({setIsLoggedIn}){
 
     return (
 

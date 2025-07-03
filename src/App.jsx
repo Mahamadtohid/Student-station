@@ -7,24 +7,31 @@ import Login from './pages/Login.jsx'
 import SignUp from './pages/SignUp.jsx'
 import Dashboard from './pages/Dashboard.jsx'
 import { Toaster } from 'react-hot-toast'
+import PrivateRoute from './components/PrivateRoute.jsx'
 
 
 
 function App() {
 
 
-  const[isLoggedIn , setIsLoggenIn] = useState(false)
+  const[isLoggedIn , setIsLoggedIn] = useState(false)
   return (
-    <div className="">
-      <NavBar isLoggedIn={isLoggedIn} setIsLoggenIn={setIsLoggenIn} />
+    <div className="w-screen h-screen bg-richblack-800 text-white">
+      <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       <Toaster/>
     
     
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/login" element={<Login setIsLoggenIn={setIsLoggenIn}/>}/>
-        <Route path="/signup" element={<SignUp setIsLoggenIn={setIsLoggenIn}/>}/>
-        <Route path="/dashboard" element={<Dashboard/>}/>
+        <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn}/>}/>
+        <Route path="/signup" element={<SignUp setIsLoggedIn={setIsLoggedIn}/>}/>
+        <Route path="/dashboard" element={
+          
+          <PrivateRoute isLoggedIn={isLoggedIn}>
+
+            <Dashboard/>
+          </PrivateRoute>
+          }/>
       </Routes>
     
 

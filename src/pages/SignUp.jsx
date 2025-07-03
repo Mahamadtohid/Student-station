@@ -2,7 +2,7 @@ import Template from '../components/Template.jsx';
 import SignUpImg from '../assets/signup.png';
 
 
-function SignUp(setIsLoggedIn){
+function SignUp({setIsLoggedIn}){
 
     return (
         

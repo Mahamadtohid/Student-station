@@ -2,7 +2,7 @@
 function Home(){
 
     return (
-        <div>
+        <div className="flex justify-center items-center h-screen text-3xl font-bold">
             HOME
         </div>
     )

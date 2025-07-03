@@ -13,17 +13,17 @@ import { Toaster } from 'react-hot-toast'
 function App() {
 
 
-  const[isLoggedIn , setLoggenIn] = useState(false)
+  const[isLoggedIn , setIsLoggenIn] = useState(false)
   return (
     <div className="">
-      <NavBar isLoggedIn={isLoggedIn} setLoggenIn={setLoggenIn} />
+      <NavBar isLoggedIn={isLoggedIn} setIsLoggenIn={setIsLoggenIn} />
       <Toaster/>
     
     
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/signup" element={<SignUp/>}/>
+        <Route path="/login" element={<Login setIsLoggenIn={setIsLoggenIn}/>}/>
+        <Route path="/signup" element={<SignUp setIsLoggenIn={setIsLoggenIn}/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
       </Routes>
     
